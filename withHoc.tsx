@@ -6,11 +6,16 @@ const withMyHOC = (Comp) => (props) => {
     ...props,
     yy: 'yy',
   };
-  return () => <Comp {..._props} />;
+  return () => 1 ? <Comp {..._props} /> : null;
+  
 };
 
 const TestComponent = ({ name, yy }) => {
-  return <div>11333--{name}-{yy}</div>;
+  return (
+    <div>
+      11333--{name}-{yy}
+    </div>
+  );
 };
 
 const FinalComponent = withMyHOC(TestComponent)({ name: '121' });
