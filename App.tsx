@@ -7,7 +7,7 @@ export default function App() {
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen</p>
-      <FinalComponent id={222} />
+      <FinalComponent flag={true} id={555} />
     </div>
   );
 }

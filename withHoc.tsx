@@ -2,7 +2,7 @@ import React = require('react');
 
 const withMyHOC = (Comp, config) => (props) => {
   console.log('dsd');
-  return 1 ? <Comp {...config} {...config} /> : null;
+  return props.flag ? <Comp {...config} {...props} /> : null;
 };
 
 export default withMyHOC;
