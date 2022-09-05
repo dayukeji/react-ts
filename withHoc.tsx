@@ -1,14 +1,18 @@
 import React = require('react');
 
-const withMyHOC = (config, WrappedComponent) => {
-  
-  return () => <WrappedComponent />;
+const withMyHOC = (Comp) => (props) => {
+  console.log('dsd');
+  const _props = {
+    ...props,
+    yy: 'yy',
+  };
+  return () => <Comp {..._props} />;
 };
 
-const TestComponent = (props) => {
-  return <div>11333-{props}</div>;
+const TestComponent = ({ name, yy }) => {
+  return <div>11333--{name}-{yy}</div>;
 };
 
-const FinalComponent = withMyHOC(TestComponent);
+const FinalComponent = withMyHOC(TestComponent)({ name: '121' });
 
 export default FinalComponent;
